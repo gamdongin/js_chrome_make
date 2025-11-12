@@ -1,12 +1,8 @@
-const a = true;
-let b;
-const c = null;
+const b = "wqwdwd";
+const a = [b,2,3,2,12313,43523243,"1234145325",436235,1232];
 
-// let 재선언 금지, 재할당 가능
-// const 재선언 금지, 재할당 금지
-// var 재선언 가능, 재할당 가능
-// var 쓰면 대가리 깨짐
+console.log(a);
+console.log(a[4]);
 
-console.log(a, b, c);
-console.log(b);
-console.log(c);
+a.push(99999); // 맨 뒤에 추가, 맵핑한 주소가 아닌 데이터 자체가 바뀌기에 const 도 가능
+console.log(a[-1]);
