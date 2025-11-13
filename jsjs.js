@@ -1,13 +1,21 @@
-const a = {
-    a : "123sad",
-    b : 123123,
-    c : null,
-    d : true
-};
+function asd(a){
+    console.log("여기 " + a + "가 있다.");
+}
+function qwe(a,b){
+    console.log(a+b);
+    console.log(a-b);
+    console.log(a/b);
+    console.log(a*b);
+}
+asd("sda");
+asd("bdfsfe");
+qwe(12,4);
 
-console.log(a);
-a.qwe = "잇";
-console.log(a);
-console.log(a.d);
-a.d = false;
-console.log(a.d);
+const zxc = {
+    a : 123,
+    b : "qwe",
+    c : function (){
+        console.log("이런저런요런조런");
+    }
+}
+zxc.c();
