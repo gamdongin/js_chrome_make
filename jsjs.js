@@ -1,21 +1,7 @@
 function asd(a){
-    console.log("여기 " + a + "가 있다.");
+    console.log("여기 " + a + "개가 있다.");
+    return a;
 }
-function qwe(a,b){
-    console.log(a+b);
-    console.log(a-b);
-    console.log(a/b);
-    console.log(a*b);
-}
-asd("sda");
-asd("bdfsfe");
-qwe(12,4);
 
-const zxc = {
-    a : 123,
-    b : "qwe",
-    c : function (){
-        console.log("이런저런요런조런");
-    }
-}
-zxc.c();
+a = asd(999);
+console.log(a);
