@@ -1,8 +1,18 @@
-const b = document.querySelector(".uuuu h1");
-const first = b.className; // 최초의 클래스
+const formLogin = document.querySelector("#form-login");
 
-function a(){
-    // toggle (메소드 중 하나)는 신이다.
-    b.classList.toggle("asd");
+const inputLogin = formLogin.querySelector("input");
+const buttonLogin = formLogin.querySelector("button");
+
+// const inputLogin = document.querySelector("#form-login input");
+// const buttonLogin = document.querySelector("#form-login button");
+
+function consolView(){
+    if (inputLogin.value === ""){
+        console.log("이름 작성");
+    } else {
+        console.log("hello "+inputLogin.value);
+    }
+    
 }
-b.addEventListener("click", a);
+
+buttonLogin.addEventListener("click", consolView);
