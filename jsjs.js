@@ -14,6 +14,8 @@ function consolView(event){
     hiddenH1.innerText = `Hi ${userName}`;
     // ``는 파이썬의 f"" 와 비슷함  // f" {var}" // ` ${var}`
     hiddenH1.classList.remove(HIDDEN_DISP);
+    localStorage.setItem("userName", userName)
+    // localStorage 는 컴퓨터 내에 데이터 저장 // 드디어 이거 배운다
 }
 
 formLogin.addEventListener("submit", consolView);
