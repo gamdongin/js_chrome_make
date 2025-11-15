@@ -1,6 +1,16 @@
 const clock = document.querySelector("h2#clock");
+let date = new Date();
+let second = 0;
+let minute = 0;
+let hour = 0;
+let viewTime = `${hour} : ${minute} : ${second}`;
+
 function sayHello(){
-    clock.innerText = "time out";
+    let date = new Date();
+    second = date.getSeconds();
+    minute = date.getMinutes();
+    hour = date.getHours();
+    viewTime = `${hour} : ${minute} : ${second}`;
+    clock.innerText = viewTime;
 }
-setTimeout(sayHello, 2000);
-// setInterval(해당 함수를, t ms 후 한번 실행)
+setInterval(sayHello, 1000);
