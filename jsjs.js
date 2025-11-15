@@ -5,17 +5,29 @@ const buttonLogin = formLogin.querySelector("button");
 const hiddenH1 = document.querySelector("#greeting");
 const HIDDEN_VISI = "hiddenVisi";
 const HIDDEN_DISP = "hiddenDisp";
-// 문자열만 저장하는 변수는 대문자와 _ 로 작성하는 관습이있다.
+
+const USERNAME_KEY = "userName"
 
 function consolView(event){
     event.preventDefault();
     const userName = inputLogin.value;
     formLogin.classList.add(HIDDEN_VISI);
-    hiddenH1.innerText = `Hi ${userName}`;
-    // ``는 파이썬의 f"" 와 비슷함  // f" {var}" // ` ${var}`
+    diplayHiddenH1(userName);
+    localStorage.setItem(USERNAME_KEY, userName);
+}
+// hoisting 이라고 변수나 함수를 맨 위로 자동으로 끌어올리는게 있음
+// 메모리 항당 과정에서 이루어짐
+function diplayHiddenH1(USER_NeAME){
     hiddenH1.classList.remove(HIDDEN_DISP);
-    localStorage.setItem("userName", userName)
-    // localStorage 는 컴퓨터 내에 데이터 저장 // 드디어 이거 배운다
+    hiddenH1.innerText = `Hi ${USER_NeAME}`;
 }
 
-formLogin.addEventListener("submit", consolView);
+const savedUsername = localStorage.getItem(USERNAME_KEY);
+
+if (savedUsername === null){
+    formLogin.classList.remove(HIDDEN_VISI);
+    formLogin.addEventListener("submit", consolView);
+} else {
+    diplayHiddenH1(savedUsername);
+}
+
